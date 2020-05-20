@@ -1,0 +1,90 @@
+<!Doctype HTML>
+<html>
+    <heade>
+        <title>Lógica de Programação JavaScript</title>
+        <meta charset="utf-8">
+        <style>
+          .cabecalho{
+            border: white solid;
+            margin: 10px;
+          }
+          .buto{
+            margin-left: 40%;
+            margin-bottom: 5px;
+          }
+          h1{
+            text-align: center;
+            color: white;
+          }
+          h2{
+            margin-left:10px;
+            color: rgb(250, 182, 239);
+          }
+          body{
+            background-color: #7159c1;
+          }
+          button{
+            font-size: 16px;
+            border-radius: 3px;
+            border:none;
+            padding: 10px;
+            transition: background .2s;
+          }
+          button:hover{
+            background-color: violet;
+          }
+          .saida{
+            color:white;
+            margin-left: 10px;
+            font-size: 30px;
+          }
+        </style>
+    </heade>
+    <body>
+      <div class="cabecalho">
+        <h1>Teste de Estudos Jonathan Lauro</h1>
+        <div class="buto">
+          <button onclick="iniciarCalculo('+')"> + </button>
+          <button onclick="iniciarCalculo('-')"> - </button>
+          <button onclick="iniciarCalculo('*')"> * </button>
+          <button onclick="iniciarCalculo('/')"> / </button>
+          <button onclick="iniciarCalculo('%')"> % </button>
+        </div>
+      </div>
+        <h2>Resultado:</h2>
+        <div class="saida"></div> 
+       <script>
+         var n2 = prompt("Digite um número: ");
+         n2 = parseFloat(n2);
+         escreva(n2);
+         function escreva(mensagem){
+          var saida = document.querySelector(".saida");
+          saida.innerHTML = mensagem;
+          }
+         function iniciarCalculo(simbolo){
+           var n1 = document.querySelector(".saida").textContent;
+           n1 = parseFloat(n1);
+           var n2 = prompt("Digite um número: ");
+           n2 = parseFloat(n2);
+           var msg = calcular(simbolo,n1,n2);
+           escreva(msg);
+          }
+          function calcular(simbolo,n1,n2){
+            var numeroCalculado = null;
+            switch(simbolo){
+              case '+': numeroCalculado = n1+n2;
+              break;
+              case '-': numeroCalculado = n1-n2;
+              break;
+              case '*': numeroCalculado = n1*n2;
+              break;
+              case '/': numeroCalculado = n1/n2;
+              break;
+              case '%': numeroCalculado = n1%n2;
+              break;
+            }
+            return numeroCalculado;
+          }
+       </script>
+    </body> 
+</html>
